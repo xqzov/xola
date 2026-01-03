@@ -394,11 +394,16 @@ nav {
     /* Заголовок и подзаголовок идут первыми */
     .mega-title {
         order: 1;
-        transform: scale(1.5, 1.2);
-        transform-origin: center;
-        font-size: 15vw;
+        /* Убираем scale, который искажает шрифт */
+        transform: none;
+        /* Используем встроенные оси вариативного шрифта для растяжения */
+        font-stretch: 200%;
+        font-weight: 300;
+        font-size: 18.2vw;
+        /* Подберите размер под экран */
         margin-top: 30px;
         margin-bottom: 16px;
+        text-align: center;
     }
     .subtitle {
         order: 2;
