@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Xola</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/" class="logo">
+            <img src="X.png" alt="Xola Logo">
+        </a>
+        <div class="nav-center">
+            <a href="#">Возможности</a>
+            <a href="#">Приватность</a>
+        </div>
+        <a href="#" class="nav-btn-blue">
+            <span class="btn-text">Скачать</span>
+            <svg class="download-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 15L12 3M12 15L8 11M12 15L16 11M2 17L2 18C2 19.6569 3.34315 21 5 21L19 21C20.6569 21 22 19.6569 22 18L22 17" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+        </a>
+    </nav>
+
+    <main class="hero-container">
+
+        <div class="text-content">
+            <div class="star-icon star-1">✦</div>
+
+            <h1 class="mega-title">
+                <div>ПРИВЕТ. ЭТО XOLA.</div>
+                <div class="gradient-text">ОБЩЕНИЕ БЕЗ ГРАНИЦ</div>
+            </h1>
+
+            <p class="subtitle">
+                Быстрый. Приватный. Невесомый. Мессенджер <br> нового поколения.
+            </p>
+
+            <div class="cta-wrapper">
+                <div class="btn-pill-dark">
+                    <div class="pill-content">
+                        <span class="btn-pill-text">ГОУ В XOLA</span>
+                        <div class="arrow-circle">→</div>
+                    </div>
+
+                    <a href="#" class="btn-blue-rect">
+            СКАЧАТЬ В APPSTORE
+        </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="visual-content">
+            <div class="phone-glow"></div>
+
+            <img src="iPhone 16 Pro Max - 6.png" alt="Xola App Interface" class="iphone-img" id="tilt-phone">
+            <div class="star-icon star-2">✦</div>
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

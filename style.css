@@ -1,0 +1,469 @@
+@font-face {
+    font-family: 'Extenda';
+    src: url('0_ExtendaVariable-Regular.ttf') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 10% 200%;
+}
+
+:root {
+    --bg-dark: #141416;
+    --accent-blue: #3760E8;
+    --text-white: #FFFFFF;
+    --font-head: 'Extenda', sans-serif;
+    /* Используем новый шрифт */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* --- Navigation (Стиль "Пилюля" сверху) --- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    /* Отступ сверху */
+    padding: 12px 12px;
+    background: rgba(25, 25, 28, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 100px;
+    /* Овальная форма */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    padding-left: 10px;
+    height: 24px;
+    /* Оптимальный размер для иконки в навигации */
+    width: auto;
+    display: block;
+}
+
+.nav-center {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    /* Это прижмет блок вправо, к кнопке */
+    margin-right: 40px;
+    /* Отступ между ссылками и кнопкой "Скачать" */
+}
+
+.download-icon {
+    display: none;
+    /* Скрываем иконку на компьютерах */
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: #8E8E93;
+    /* Тот же цвет, что и у subtitle */
+    font-family: 'Inter', sans-serif;
+    /* Применяем шрифт Inter */
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-center a:hover {
+    color: var(--text-white);
+}
+
+.nav-btn-blue {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    /* Также применяем Inter для кнопки */
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(76, 112, 255, 0.4);
+}
+
+
+/* --- Hero Layout --- */
+
+.hero-container {
+    display: flex;
+    /* Используем flex для лучшего контроля */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 50px;
+    height: calc(100vh - 100px);
+    /* Высота экрана минус хедер */
+    position: relative;
+}
+
+
+/* --- ТИПОГРАФИКА (Исправленная) --- */
+
+.text-content {
+    flex: 1.2;
+    /* Текст занимает больше места */
+    position: relative;
+    z-index: 10;
+    padding-right: -20px;
+}
+
+.mega-title {
+    font-family: var(--font-head);
+    font-size: 11.5vw;
+    /* Делаем очень крупным */
+    line-height: 0.8;
+    text-transform: uppercase;
+    /* Свойства Variable шрифта для сужения */
+    font-stretch: 100%;
+    /* Насильно сужаем шрифт, если он поддерживает оси */
+    font-weight: 275;
+    /* Дополнительное визуальное вытягивание */
+    transform: scaleY(9);
+    transform: scaleX(1.2);
+    transform-origin: left top;
+    margin-bottom: 24px;
+    /* Увеличил отступ, так как scaleY "съедает" место */
+    letter-spacing: 0.01em;
+    display: block;
+}
+
+
+/* Эффект градиента на нижней части текста */
+
+.gradient-text {
+    background: linear-gradient(90deg, #FFFFFF 30%, #426bef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* 3. Фикс позиции подзаголовка */
+
+.subtitle {
+    margin-top: 4px;
+    /* Чтобы не накладывался на вытянутый заголовок */
+    font-family: 'Inter', sans-serif;
+    color: #8E8E93;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+
+/* Buttons */
+
+
+/* Общий контейнер для правильного позиционирования */
+
+.cta-wrapper {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* Вытянутая темная оболочка */
+
+.btn-pill-dark {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: rgba(128, 128, 128, 0.12);
+    /* Очень легкий фон */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 16px 14px 85px;
+    /* Отступы: больше слева для текста, меньше справа для синей кнопки */
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+
+/* Блок с текстом и стрелкой */
+
+.pill-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* Текст "ГОУ В XOLA" вытянутый 1-в-1 */
+
+.btn-pill-text {
+    font-family: var(--font-head);
+    /* Используем Extenda */
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: white;
+    font-stretch: 50%;
+    transform: scaleY(1.2);
+    transform: scaleX(2.5);
+    font-weight: 125;
+    /* Сильное вытягивание по вертикали */
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: 1px;
+    padding-right: 26px;
+}
+
+
+/* Кружок со стрелкой */
+
+.arrow-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+
+/* Синяя кнопка внутри оболочки */
+
+.btn-blue-rect {
+    background: #3760E8;
+    /* Цвет как на скрине */
+    color: white;
+    padding: 20px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(55, 96, 232, 0.3);
+    transition: 0.3s ease;
+}
+
+.btn-blue-rect:hover {
+    background: #2948b8;
+    box-shadow: 0 6px 25px rgba(55, 96, 232, 0.5);
+}
+
+
+/* --- Phone Visual --- */
+
+.visual-content {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.iphone-img {
+    width: 300px;
+    /* Ширина как у старого макета */
+    height: auto;
+    /* Высота подстроится автоматически */
+    border-radius: 50px;
+    /* Скругляем углы картинки, чтобы было красиво */
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+    /* Глубокая тень как раньше */
+    position: relative;
+    z-index: 2;
+    transform: rotate(-2deg);
+    /* Можно добавить легкий наклон для стиля */
+}
+
+
+/* Свечение за телефоном */
+
+.phone-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(76, 112, 255, 0.35) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+
+/* Stars */
+
+.star-icon {
+    position: absolute;
+    color: white;
+    filter: drop-shadow(0 0 10px white);
+}
+
+.star-1 {
+    top: -80px;
+    left: 10%;
+    font-size: 2rem;
+}
+
+.star-2 {
+    bottom: 20px;
+    right: -40px;
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+
+/* Адаптив */
+
+
+/* --- Адаптив --- */
+
+@media (max-width: 900px) {
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 60px;
+        /* Чуть уменьшил отступ сверху */
+        height: auto;
+        padding-bottom: 50px;
+        /* Отступ снизу страницы */
+    }
+    /* 1. МАГИЯ: Игнорируем границы контейнера с текстом */
+    .text-content {
+        display: contents;
+    }
+    .nav {
+        padding: 12px 20px;
+    }
+    .logo img {
+        height: 28px;
+        /* Чуть увеличил логотип на мобиле */
+    }
+    .nav-center a {
+        font-size: 0.8rem;
+        /* Чуть меньше размер шрифта */
+        margin-right: -20px;
+    }
+    .nav-btn-blue {
+        padding: 0;
+        width: 42px;
+        /* Фиксированная ширина для круга */
+        height: 42px;
+        /* Фиксированная высота для круга */
+        border-radius: 50%;
+        /* Делаем кнопку идеально круглой */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--accent-blue);
+        flex-shrink: 0;
+        /* Чтобы круг не сплющивался */
+    }
+    .nav-btn-blue .btn-text {
+        display: none;
+        /* Скрываем текст "Скачать" */
+    }
+    .nav-btn-blue .download-icon {
+        display: block;
+        /* Показываем SVG иконку */
+    }
+    /* 2. Настраиваем порядок элементов (order) */
+    /* Заголовок и подзаголовок идут первыми */
+    .mega-title {
+        order: 1;
+        transform: scale(1.5, 1.2);
+        transform-origin: center;
+        font-size: 15vw;
+        margin-top: 30px;
+        margin-bottom: 16px;
+    }
+    .subtitle {
+        order: 2;
+        margin-bottom: 30px;
+    }
+    /* Телефон ставим третьим (между текстом и кнопкой) */
+    .visual-content {
+        order: 3;
+        flex: unset;
+        /* Сбрасываем flex-пропорции */
+        margin-bottom: 40px;
+        /* Отступ от телефона до кнопки */
+        justify-content: center;
+    }
+    /* Кнопку ставим в самый конец */
+    .cta-wrapper {
+        order: 4;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        /* Увеличил отступ сверху */
+        transform: scale(0.95);
+        /* Увеличили общий масштаб группы кнопок */
+        transform-origin: center top;
+    }
+    .btn-pill-dark {
+        padding: 10px 10px 10px 60px;
+        /* Чуть больше отступы со всех сторон */
+        gap: 15px;
+        /* Больше расстояние между текстом и синей кнопкой */
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .btn-pill-text {
+        font-size: 2.4rem;
+        /* Увеличили с 2rem до 2.4rem */
+        padding-right: 18px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+    /* 4. Уменьшаем кружок со стрелкой */
+    .arrow-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+        /* Если места совсем мало, можно скрыть: display: none; */
+    }
+    .btn-blue-rect {
+        padding: 14px 20px;
+        /* Сделали саму синюю кнопку чуть выше и шире */
+        font-size: 0.85rem;
+        /* Немного крупнее шрифт на кнопке */
+        border-radius: 12px;
+        white-space: nowrap;
+    }
+    /* Дополнительные фиксы для визуала */
+    .text-content {
+        padding-right: 0;
+    }
+    /* Фикс для звезды (так как родитель исчез из потока) */
+    .star-1 {
+        top: 20px;
+        left: 20%;
+    }
+}
