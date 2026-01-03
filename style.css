@@ -394,16 +394,28 @@ nav {
     /* Заголовок и подзаголовок идут первыми */
     .mega-title {
         order: 1;
-        /* Убираем scale, который искажает шрифт */
-        transform: none;
-        /* Используем встроенные оси вариативного шрифта для растяжения */
-        font-stretch: 200%;
+        /* УДАЛЯЕМ transform: none; так как он может конфликтовать */
+        transform: none !important;
+        /* Используем возможности вариативного шрифта */
+        font-stretch: 150%;
         font-weight: 300;
-        font-size: 18.2vw;
-        /* Подберите размер под экран */
+        /* Подбираем размер, чтобы текст занимал всю ширину, но не переносился */
+        font-size: 20vw;
+        line-height: 0.8;
+        /* ГАРАНТИРУЕМ ДВЕ СТРОКИ */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 30px;
         margin-bottom: 16px;
         text-align: center;
+        letter-spacing: 0.02em;
+    }
+    .mega-title div {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        /* Запрещает перенос слов внутри строки */
     }
     .subtitle {
         order: 2;
