@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = (window.innerHeight / 2 - e.pageY) / 10;
 
             // Ограничиваем углы, чтобы телефон не "выворачивался"
-            const rotateX = Math.max(-15, Math.min(15, y));
-            const rotateY = Math.max(-15, Math.min(15, x));
+            const rotateX = Math.max(-10, Math.min(10, y));
+            const rotateY = Math.max(-10, Math.min(10, x));
 
             // Применяем 3D трансформацию
             phoneContainer.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${-rotateY}deg)`;
