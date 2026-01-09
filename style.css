@@ -432,6 +432,8 @@ nav {
         font-weight: 300;
         font-style: normal;
         /* на всякий случай */
+        font-variation-settings: 'slnt' 0;
+        /* <- ДОБАВЛЕНО: Явно отключаем наклон */
         /* Подбираем размер, чтобы текст занимал всю ширину, но не переносился */
         font-size: 20vw;
         line-height: 0.8;
