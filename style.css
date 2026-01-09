@@ -427,9 +427,11 @@ nav {
         /* УДАЛЯЕМ transform: none; так как он может конфликтовать */
         transform: none !important;
         /* Используем возможности вариативного шрифта */
-        font-stretch: 100%;
+        font-stretch: normal;
         transform: scaleX(1.15);
         font-weight: 300;
+        font-style: normal;
+        /* на всякий случай */
         /* Подбираем размер, чтобы текст занимал всю ширину, но не переносился */
         font-size: 20vw;
         line-height: 0.8;
