@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isMobile && phoneContainer) {
         document.addEventListener('mousemove', (e) => {
             // Чувствительность наклона (чем больше делитель, тем меньше наклон)
-            const x = (window.innerWidth / 2 - e.pageX) / 25;
-            const y = (window.innerHeight / 2 - e.pageY) / 25;
+            const x = (window.innerWidth / 2 - e.pageX) / 20;
+            const y = (window.innerHeight / 2 - e.pageY) / 10;
 
             // Ограничиваем углы, чтобы телефон не "выворачивался"
             const rotateX = Math.max(-15, Math.min(15, y));
