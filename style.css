@@ -427,7 +427,8 @@ nav {
         /* УДАЛЯЕМ transform: none; так как он может конфликтовать */
         transform: none !important;
         /* Используем возможности вариативного шрифта */
-        font-stretch: 150%;
+        font-stretch: 100%;
+        transform: scaleX(1.15);
         font-weight: 300;
         /* Подбираем размер, чтобы текст занимал всю ширину, но не переносился */
         font-size: 20vw;
